@@ -1,11 +1,10 @@
 #  <span style="color:tan"> **Module 6 API Challenge**  </span>
 ### Chris Gruenhagen 7Nov2022
-Homework Log
+**Homework Log**
 
-The WeatherPy and VacationPy homework is located in the "WeatherPy_VacationPy" directory in the python-api-challenge repository.  The WeatherPy homework consists of a jupyter notebook "WeatherPy.ipynb" and output files located in the "output_data" directory.  The VacationPy homework consists of a jupyter notebook "VacationPy.ipynb"
+The WeatherPy and VacationPy homework is located in the "WeatherPy_VacationPy" directory in the python-api-challenge repository.  The WeatherPy homework consists of a jupyter notebook "WeatherPy.ipynb" and output files located in the "output_data" directory (cities.csv file and scatterplot png files).  The VacationPy homework consists of a jupyter notebook "VacationPy.ipynb" and output files located in the "output_data" directory (map png files).
 
-**Homework Summary**
-
+---
 
 ## Part 1: Weather Py
 ---
@@ -124,7 +123,7 @@ Of the 561 cities evaluated, six cities met the ideal weather conditions (max te
 ### Analysis
 The cities data gathered in the WeatherPy excercise (n = 561) was used to create a map visualizing the city location and humidity.   
 
-![Alt text](/WeatherPy_VacationPy/AllCities%20VacationPy%202022-11-06.png "City Location and Humidity")
+![Alt text](/WeatherPy_VacationPy/output_data/AllCities%20VacationPy%202022-11-06.png "City Location and Humidity")
 
 The cities data was further filtered by the following ideal conditions: 
 * Max Temperature between 70 to 90 degrees Fahrenheit
@@ -133,7 +132,7 @@ The cities data was further filtered by the following ideal conditions:
 * Humidity between 30% and 50% 
 For each ideal city (n = 8), Geoapify was used to find the first hotel located within 10,000 meters of the city coordinates. The query found six of the cities with hotels within range and two of the cities without hotels within range.
 
-![Alt text](/WeatherPy_VacationPy/IdealCities%20VacationPy%202022-11-06 .png "Ideal Cities and Hotels")
+![Alt text](/WeatherPy_VacationPy/output_data/IdealCities%20VacationPy%202022-11-06.png "Ideal Cities and Hotels")
 
 
 

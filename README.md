@@ -132,7 +132,7 @@ The cities data was further filtered by the following ideal conditions:
 * Humidity between 30% and 50% 
 For each ideal city (n = 8), Geoapify was used to find the first hotel located within 10,000 meters of the city coordinates. The query found six of the cities with hotels within range and two of the cities without hotels within range.
 
-![Alt text](/WeatherPy_VacationPy/output_data/IdealCities%20VacationPy%202022-11-06.png "Ideal Cities and Hotels")
+![Alt text](/WeatherPy_VacationPy/output_data/IdealCities%20VacationPy%202022-11-07.png "Ideal Cities and Hotels")
 
 
 

@@ -15,7 +15,27 @@ The purpose of this study was to provide comprehensive data to answer a fundamen
 
 ### **Study Format**
 
-In this study, over 500 random cities of varying distances from the equator were evaluated to visualize the potential relationships between latitude and temperature, humidity, cloudiness, and wind speed in both the Northern and Southern hemispheres. Data was obtained from OpenWeather https://openweathermap.org/.  
+In this study, data on a single day (Nov 6, 2022) from over 500 random cities of varying distances from the equator were evaluated to visualize the potential relationships between latitude and temperature, humidity, cloudiness, and wind speed in both the Northern and Southern hemispheres. Data was obtained from OpenWeather https://openweathermap.org/.
+
+Limitations:  This dataset was generated on a single day so it does not capture day to day variation, and it relies on data from cities which are generally located in more liveable locations by latitude.  Comparisons between the northern and southern hemispheres may be impacted by differences in the number of cities (northern = 393, southern = 168) and ranges of latitude evaluated (northern 0 to 77, southern 0 to -55).
+
+Exclusions: At the beginning of the study, 611 random cities were selected from the citipy library. While pulling additional weather data from OpenWeather, 50 cities were excluded due to errors in data processing, leaving a dataset of 561 cities for analysis.
+
+### **Attribution**
+‘Weather data provided by OpenWeather’
+https://openweathermap.org/
+
+Powered by https://www.geoapify.com/ Geoapify
+
+Powered by https://www.openstreetmap.org/copyright © OpenStreetMap contributors
+
+R correlation matrix: https://sphweb.bumc.bu.edu/otlt/MPH-Modules/PH717-QuantCore/PH717-Module9-Correlation-Regression/PH717-Module9-Correlation-Regression4.html
+
+### Conclusions
+
+What is the weather like as we approach the equator?
+
+Based on the data collected on over 500 random cities on November 6, 2022 from OpenWeather https://openweathermap.org/, temperature increases and wind speed appears to decrease as we approach the equator.  Humidity and cloudiness did not appear to be correlated with latitude.
 
 ### **Analysis**
 ### *Requirement 1:  Create Plots to showcase the relationship between weather variables and latitude across the globe.*
@@ -40,7 +60,10 @@ Latitude vs Temperature in the Northern and Southern Hemispheres
 ![Alt text](/WeatherPy_VacationPy/output_data/South_Lat_vs_Max%20Temp.png "Southern Latitude vs Humidity")
 
         **Discussion about the linear relationship:**
-         In the northern hemisphere, there is a very strong negative correlation (r = -0.84) between latitude and max temperature.  In the southern hemisphere, there is a strong correlation (r = 0.68) between latitude and max temperature.  In both hemispheres, the max temperature increases as you approach the equator (latitude = 0).  
+         In the northern hemisphere, there is a very strong negative correlation (r = -0.84) between latitude and max temperature.  In the southern hemisphere, there is a moderate correlation (r = 0.53) between latitude and max temperature.  In both hemispheres, the max temperature increases as you approach the equator (latitude = 0). 
+         
+         The northern latitude appears to have a greater temperature difference (-33C to 33C) than the southern latitude (9C to 33C), but the city locations in the northern latitudes also span a much greater range of latitudes (lat 0 to 77) than the cities in the southern latitudes (lat 0 to -55). Additional data and/or analysis would be required to evaluate differences between the two hemispheres.
+         
 
 
 Latitude vs Humidity in the Northern and Southern Hemispheres
@@ -48,28 +71,21 @@ Latitude vs Humidity in the Northern and Southern Hemispheres
 ![Alt text](/WeatherPy_VacationPy/output_data/South_Lat_vs_Humidity.png "Southern Hemisphere Latitude vs Humidity")
 
         **Discussion about the linear relationship:** 
-        In the northern hemisphere, there is a weak to moderate correlation (r = 0.36) between latitude and humidity. In the southern hemisphere, there is no  correlation (r =0.12) between latitude and humidity.  Although humidity varies widely across latitudes in both hemispheres, the average humidity in the northern hemisphere appears to increase with latitude.
+        In the northern hemisphere, there is a very weak to weak correlation (r = 0.24) between latitude and humidity. In the southern hemisphere, there is a weak correlation (r =0.32) between latitude and humidity.  Humidity varies widely across latitudes in both hemispheres, from 13 to 100%. 
 
 Latitude vs Cloudiness in the Northern and Southern Hemispheres
 ![Alt text](/WeatherPy_VacationPy/output_data/North_Lat_vs_Cloudiness.png "Northern Hemisphere Latitude vs Cloudiness") 
 ![Alt text](/WeatherPy_VacationPy/output_data/South_Lat_vs_Cloudiness.png "Southern Hemisphere Latitude vs Cloudiness")
 
         **Discussion about the linear relationship:** 
-        In the northern hemisphere, there is a very weak correlation (r = 0.2) between latitude and cloudiness.  In the southern hemisphere, there is a very weak (r =0.24) between latitude and cloudiness.  Cloudiness varies widely across latitudes in both hemispheres, from 0 to 100%.
+        In both the northern and southern hemispheres, there is a weak correlation (r = 0.28, r = 0.33) between latitude and cloudiness. Cloudiness varies widely across latitudes in both hemispheres, from 0 to 100%.
 
 Latitude vs Wind Speed in the Northern and Southern Hemispheres
 ![Alt text](/WeatherPy_VacationPy/output_data/North_Lat_vs_Wind%20Speed.png "Northern Hemisphere Latitude vs Wind Speed") 
 ![Alt text](/WeatherPy_VacationPy/output_data/South_Lat_vs_Wind%20Speed.png "Southern Hemisphere Latitude vs Wind Speed")
 
         **Discussion about the linear relationship:** 
-        In the northern hemisphere, there is no correlation (r = 0.10) between latitude and wind speed. In the southern hemisphere, there is a weak negative correlation (r = - 0.28) between latitude and wind speed.  Although wind speed varies widely across latitudes in both hemispheres (0-16 m/s), the average wind speed in the southern hemisphere appears to increase with latitude.
-
-
-### Conclusions
-
-What is the weather like as we approach the equator?
-Based on the data collected on over 500 random cities on November 6, 2022 from OpenWeather https://openweathermap.org/, temperature increases and wind speed appears to decrease as we approach the equator.  Humidity and cloudiness did not appear to be correlated with latitude.  
-
+        In the northern hemisphere, there is a very weak to weak correlation (r = 0.22) between latitude and wind speed. In the southern hemisphere, there is a weak negative correlation (r = - 0.29) between latitude and wind speed.  Although wind speed varies widely across latitudes in both hemispheres (0-14 m/s), the average wind speed in both hemispheres appear to decrease as you approach the equator (latitude = 0).
 
 ## Part 2: Vacation Py
 ---
@@ -79,26 +95,45 @@ The purpose of this study was to provide weather and hotel information for citie
 
 ### Study Format
 
-In this study, over 500 random cities of varying distances from the equator were evaluated to visualize the weather and hotel information on a world map. Weather information was evaluated to provide hotel locations with ideal weather conditions (as defined by the user). Data was obtained from OpenWeather https://openweathermap.org/,  Geoapify https://www.geoapify.com/ and © OpenStreetMap contributors https://www.openstreetmap.org/copyright .
+In this study, data on a single day (Nov 6, 2022) from over 500 random cities of varying distances from the equator were evaluated to visualize the weather and hotel information on a world map. Weather information was evaluated to provide hotel locations with ideal weather conditions. Data was obtained from OpenWeather https://openweathermap.org/,  Geoapify https://www.geoapify.com/ and © OpenStreetMap contributors https://www.openstreetmap.org/copyright .
+
+Limitations:  This dataset was generated on a single day so it does not capture day to day variation.
+
+### **Attribution**
+‘Weather data provided by OpenWeather’
+https://openweathermap.org/
+
+Powered by https://www.geoapify.com/ Geoapify
+
+Powered by https://www.openstreetmap.org/copyright © OpenStreetMap contributors
+
+### Conclusion
+Of the 561 cities evaluated, six cities met the ideal weather conditions (max temp 70-90C, wind speed <10 m/s, cloudiness <25%, humidity 30-50%) and had a hotel located within 10,000 meters of the city coordinates.
+
+| City |Country|Hotel|
+| --- | --- | --- |
+|molina|CL|La Cabaña|
+|diamantino|BR|Hotel kayaby|
+|santa luzia|BR|Alcoboca|
+|odweyne|SO|فندق المدينه|
+|ariquemes|BR|Aquarius|
+|santa rosalia|MX|Hotel del Real|
+
+
 
 ### Analysis
-The cities data gathered in the WeatherPy excercise was used to create a map visualizing the city location and humidity.   
+The cities data gathered in the WeatherPy excercise (n = 561) was used to create a map visualizing the city location and humidity.   
+
+![Alt text](/WeatherPy_VacationPy/AllCities%20VacationPy%202022-11-06.png "City Location and Humidity")
 
 The cities data was further filtered by the following ideal conditions: 
 * Max Temperature between 70 to 90 degrees Fahrenheit
 * Wind speed less than 10 meters/second
 * Cloudiness less than 25% 
 * Humidity between 30% and 50% 
-For each ideal city, Geoapify was used to find the first hotel located within 10,000 meters of the city coordinates.
+For each ideal city (n = 8), Geoapify was used to find the first hotel located within 10,000 meters of the city coordinates. The query found six of the cities with hotels within range and two of the cities without hotels within range.
 
-
-
-
-TBD
-
-
-### Exclusions
-TBD - or delete
+![Alt text](/WeatherPy_VacationPy/IdealCities%20VacationPy%202022-11-06.png "Ideal Cities and Hotels")
 
 
 
